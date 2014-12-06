@@ -2112,7 +2112,7 @@ msgid "Please enter your name"
 msgstr "Моля, въведете Вашето име"
 
 msgid "Please enter your name, not your email address, in the name field."
-msgstr "Моля, въведете името си, а не Вашия имейл адрес, в полето за име."
+msgstr "Моля, въведете пълното си име (малко име, презиме и фамилия), в полето за име."
 
 msgid "Please enter your new email address"
 msgstr "Моля, въведете Вашия нов имейл адрес"
@@ -4125,7 +4125,7 @@ msgid ""
 msgstr "Вашето име, Заявление и каквито и да са отговори ще се появяват в <strong>машините за търсене</strong>\\n        (<a href=\"{{url}}\">подробности</a>)."
 
 msgid "Your name:"
-msgstr "Вашето име:"
+msgstr "Вашето пълно име:"
 
 msgid "Your original message is attached."
 msgstr "Оригиналното Ви съобщение е прикрепено."
