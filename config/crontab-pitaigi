@@ -1,7 +1,7 @@
 # Timed tasks for Pitaigi.bg.
 # Based on the crontab-example file found in the Alaveteli repository.
 
-PATH=/usr/local/bin:/usr/bin:/bin:/alaveteli/current/commonlib/bin
+PATH=/usr/local/bin:/usr/bin:/bin:/alaveteli/current/commonlib/bin:/usr/local/rvm/gems/ruby-2.0.0-p353/bin
 MAILTO=me@ddimitrov.name
 
 # Every 5 minutes
