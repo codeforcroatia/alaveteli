@@ -22,7 +22,10 @@ SU
         mv "$XAPIAN_DB_DIR/$RAILS_ENV" "$XAPIAN_DB_DIR/$RAILS_ENV.tmp"
         mv "$XAPIAN_DB_DIR/$RAILS_ENV.new" "$XAPIAN_DB_DIR/$RAILS_ENV"
         rm -rf "$XAPIAN_DB_DIR/$RAILS_ENV.tmp"
-        test -f /etc/init.d/apache2 && commonlib/bin/output-on-error /etc/init.d/apache2 restart
+        if [ -f /etc/init.d/apache2 ];
+          then
+            commonlib/bin/output-on-error /etc/init.d/apache2 restart
+          fi
     fi
   else
     echo >&2 "Could not find xapian-compact script; have you installed xapian-tools?"
