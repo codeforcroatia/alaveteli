@@ -30,6 +30,7 @@ describe InfoRequest do
 
     it 'has "requester_only" default prominence' do
         request = InfoRequest.new(:title => 'abcde',
+                                  :address => 'somewhere',
                                   :public_body => public_bodies(:geraldine_public_body),
                                   :user_id => 1)
         request.save!
@@ -77,6 +78,7 @@ describe InfoRequest do
                                                   :eir_only? => false)
             @info_request = InfoRequest.new(:external_url => 'http://www.example.com',
                                             :external_user_name => 'Example User',
+                                            :address => 'somewhere',
                                             :public_body => @public_body)
         end
 
@@ -95,6 +97,7 @@ describe InfoRequest do
 
         it 'should compute a hash' do
             @info_request = InfoRequest.new(:title => "testing",
+                                            :address => 'somewhere',
                                             :public_body => public_bodies(:geraldine_public_body),
                                             :user_id => 1)
             @info_request.save!
@@ -194,7 +197,7 @@ describe InfoRequest do
         it "should recognise l and 1 as the same in incoming emails" do
             # Make info request with a 1 in it
             while true
-                ir = InfoRequest.new(:title => "testing", :public_body => public_bodies(:geraldine_public_body),
+                ir = InfoRequest.new(:title => "testing", :address => 'somewhere', :public_body => public_bodies(:geraldine_public_body),
                     :user => users(:bob_smith_user))
                 ir.save!
                 hash_part = ir.incoming_email.match(/-[0-9a-f]+@/)[0]
@@ -833,6 +836,7 @@ describe InfoRequest do
     describe "#set_described_state and #log_event" do
         context "a request" do
             let(:request) { InfoRequest.create!(:title => "my request",
+                    :address => 'somewhere',
                     :public_body => public_bodies(:geraldine_public_body),
                     :user => users(:bob_smith_user)) }
 
@@ -1087,6 +1091,7 @@ describe InfoRequest do
             @info_request = InfoRequest.new(:external_url => 'http://www.example.com',
                                             :external_user_name => 'Example User',
                                             :title => 'Some request or other',
+                                            :address => 'somewhere',
                                             :public_body => public_bodies(:geraldine_public_body))
         end
 
@@ -1106,6 +1111,7 @@ describe InfoRequest do
             @info_request = InfoRequest.new(:external_url => 'http://www.example.com',
                                             :external_user_name => 'Example User',
                                             :title => 'Some request or other',
+                                            :address => 'somewhere',
                                             :public_body => public_bodies(:geraldine_public_body))
         end
 
@@ -1127,6 +1133,7 @@ describe InfoRequest do
             ir = InfoRequest.new(:external_url => 'http://www.example.com',
                                  :external_user_name => 'Example User',
                                  :title => 'Some request or other',
+                                 :address => 'somewhere',
                                  :described_state => 'partially_successful',
                                  :public_body => pb,
                                  :prominence => 'normal')

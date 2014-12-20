@@ -37,6 +37,7 @@ class InfoRequest < ActiveRecord::Base
     validates_format_of :title, :with => /[ёЁа-яА-Яa-zA-Zà-üÀ-Ü]/iu,
                                 :message => N_("Please write a summary with some text in it"),
                                 :if => Proc.new { |info_request| !info_request.title.nil? && !info_request.title.empty? }
+    validates_presence_of :address, :message => N_("Please enter your address")
 
     belongs_to :user
     validate :must_be_internal_or_external

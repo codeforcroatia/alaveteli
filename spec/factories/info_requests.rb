@@ -2,6 +2,7 @@ FactoryGirl.define do
 
     factory :info_request do
         title "Example Title"
+        address "Example Address, City, Street"
         public_body
         prominence 'normal'
         user
