@@ -43,6 +43,7 @@ describe ApiController, "when using the API" do
         request_data = {
             "title" => "Tell me about your chickens",
             "body" => "Dear Sir,\n\nI should like to know about your chickens.\n\nYours in faith,\nBob\n",
+            "address" => "London, UK",
 
             "external_url" => "http://www.example.gov.uk/foi/chickens_23",
             "external_user_name" => "Bob Smith",
@@ -82,6 +83,7 @@ describe ApiController, "when using the API" do
             :request_json => {
                 "title" => "Tell me about your chickens",
                 "body" => "Dear Sir,\n\nI should like to know about your chickens.\n\nYours in faith,\nBob\n",
+                "address" => "10 Downing Str., London, UK",
 
                 "external_url" => "http://www.example.gov.uk/foi/chickens_23",
                 "external_user_name" => "Bob Smith",

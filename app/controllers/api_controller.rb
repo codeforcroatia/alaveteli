@@ -32,6 +32,7 @@ class ApiController < ApplicationController
         json = ActiveSupport::JSON.decode(params[:request_json])
         request = InfoRequest.new(
             :title => json["title"],
+            :address => json["address"],
             :public_body_id => @public_body.id,
             :described_state => "waiting_response",
             :external_user_name => json["external_user_name"],
@@ -224,6 +225,7 @@ class ApiController < ApplicationController
                     :request_email => request.incoming_email,
                     :title => request.title,
                     :body => event.outgoing_message.body,
+                    :address => request.address,
 
                     :user_name => request.user_name,
                 }
