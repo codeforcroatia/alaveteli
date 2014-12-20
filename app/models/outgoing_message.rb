@@ -43,6 +43,7 @@ class OutgoingMessage < ActiveRecord::Base
 
     validates_inclusion_of :status, :in => ['ready', 'sent', 'failed']
     validates_inclusion_of :message_type, :in => ['initial_request', 'followup' ] #, 'complaint']
+    validates_presence_of :address, :if => :initial_request?
     validate :format_of_body
 
     belongs_to :incoming_message_followup, :foreign_key => 'incoming_message_followup_id', :class_name => 'IncomingMessage'
@@ -65,6 +66,9 @@ class OutgoingMessage < ActiveRecord::Base
     end
 
     after_initialize :set_default_letter
+
+    before_validation :get_default_address_from_info_request
+    before_save :get_default_address_from_info_request
 
     # How the default letter starts and ends
     def get_salutation
@@ -280,6 +284,10 @@ class OutgoingMessage < ActiveRecord::Base
         end
     end
 
+    def initial_request?
+        message_type == 'initial_request'
+    end
+
     private
 
     def set_default_letter
@@ -311,6 +319,10 @@ class OutgoingMessage < ActiveRecord::Base
         if self.what_doing.nil? || !['new_information', 'internal_review', 'normal_sort'].include?(self.what_doing)
             errors.add(:what_doing_dummy, _('Please choose what sort of reply you are making.'))
         end
+    end
+
+    def get_default_address_from_info_request
+        self.address = info_request.address if info_request and address.blank?
     end
 end
 

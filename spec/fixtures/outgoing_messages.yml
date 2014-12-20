@@ -29,6 +29,7 @@ useless_outgoing_message:
     Thanks!\r\n\
     \r\n\
     Bob\r\n"
+  address: 1 Tsar Osvoboditel, Sofia, Bulgaria
   last_sent_at: 2007-10-25 10:41:12.686264
   created_at: 2007-10-12 01:56:58.586598
   what_doing: normal_sort
@@ -48,6 +49,7 @@ silly_outgoing_message:
     Lovingly,\r\n\
     \r\n\
     Bob\r\n"
+  address: 12 Shipka, Sofia, Bulgaria
   last_sent_at: 2007-10-14 10:41:12.686264
   created_at: 2007-10-14 01:56:58.586598
   what_doing: normal_sort
@@ -58,6 +60,7 @@ badger_outgoing_message:
   status: sent
   updated_at: 2011-10-14 01:56:58.586598
   body: "Is it true that you are really a badger, in fact?"
+  address: Sitnyakovo 15, Sofia, Bulgaria
   last_sent_at: 2011-10-14 10:41:12.686264
   created_at: 2011-10-14 01:56:58.586598
   what_doing: normal_sort
@@ -68,6 +71,7 @@ boring_outgoing_message:
   status: sent
   updated_at: 2012-01-14 01:56:58.586598
   body: "How much was spent on boring equipment in the 2010-2011 financial year?"
+  address: Balgaria 12, Sofia, Bulgaria
   last_sent_at: 2012-01-14 10:41:12.686264
   created_at: 2012-01-14 01:56:58.586598
   what_doing: normal_sort
@@ -78,6 +82,7 @@ another_boring_outgoing_message:
   message_type: initial_request
   status: sent
   body: "How much was spent on boring equipment in the 2010-2011 financial year?"
+  address: Tsar Asen 1, Sofia, Bulgaria
   last_sent_at: 2006-01-12 01:57:58.586598
   created_at: 2006-01-12 01:56:58.586598
   updated_at: 2006-01-12 01:56:58.586598
@@ -89,6 +94,7 @@ spam_1_outgoing_message:
   message_type: initial_request
   status: sent
   body: "Would you like some cheap v1agra?"
+  address: Long Street 5, Sofia, Bulgaria
   last_sent_at: 2007-01-12 01:57:58.586598
   created_at: 2007-01-12 01:56:58.586598
   updated_at: 2007-01-12 01:56:58.586598
@@ -99,6 +105,7 @@ spam_2_outgoing_message:
   message_type: initial_request
   status: sent
   body: "Would you like some cheap v1agra?"
+  address: Nikola Vaptzarov 17, Hladilnika, Sofia
   last_sent_at: 2007-01-12 02:57:58.586598
   created_at: 2007-01-12 02:56:58.586598
   updated_at: 2007-01-12 02:56:58.586598
@@ -110,6 +117,7 @@ external_outgoing_message:
   message_type: initial_request
   status: sent
   body: "I should like to know about balalas."
+  address: Somewhere 17, Hladilnika, Sofia
   last_sent_at: 2009-01-12 01:57:58.586598
   created_at: 2009-01-12 01:56:58.586598
   updated_at: 2009-01-12 01:56:58.586598
@@ -121,6 +129,7 @@ anonymous_external_outgoing_message:
   message_type: initial_request
   status: sent
   body: "I do not wish to reveal my name, but would like all your information."
+  address: Somewhere 17, Hladilnika, Sofia
   last_sent_at: 2009-01-12 01:57:58.586598
   created_at: 2009-01-12 01:56:58.586598
   updated_at: 2009-01-12 01:56:58.586598
@@ -132,6 +141,7 @@ other_outgoing_message:
   message_type: initial_request
   status: sent
   body: "Just another request"
+  address: Somewhere 17, Hladilnika, Sofia
   last_sent_at: <%= Time.now %>
   created_at: 2009-01-12 01:56:58.586598
   updated_at: 2009-01-12 01:56:58.586598

@@ -6,6 +6,7 @@ FactoryGirl.define do
                 status 'ready'
                 message_type 'initial_request'
                 body 'Some information please'
+                address 'My example street address'
                 what_doing 'normal_sort'
             end
         end
@@ -20,6 +21,7 @@ FactoryGirl.define do
         initialize_with { OutgoingMessage.new({ :status => status,
                                                 :message_type => message_type,
                                                 :body => body,
+                                                :address => address,
                                                 :what_doing => what_doing }) }
         after_create do |outgoing_message|
             outgoing_message.send_message
