@@ -1971,6 +1971,7 @@ describe RequestController, "sending overdue request alerts" do
                                                :message_type => 'followup',
                                                :info_request_id => chicken_request.id,
                                                :body => 'Some text',
+                                               :address => 'Some address',
                                                :what_doing => 'normal_sort')
         outgoing_message.send_message
         outgoing_message.save!
