@@ -17,7 +17,9 @@
     }
   }
   .authority_search_ahead_results_container {
-    @include grid-row($behavior: nest);
+    @include respond-min( $main_menu-mobile_menu_cutoff ){
+      @include grid-row($behavior: nest);
+    }
   }
   #authority_search_ahead_results,
   .cant_find_results {
