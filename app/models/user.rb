@@ -207,7 +207,7 @@ class User < ActiveRecord::Base
         if not name.nil?
             name.strip!
         end
-        if public_banned?
+        if banned?
             # Use interpolation to return a string rather than a SafeBuffer so that
             # gsub can be called on it until we upgrade to Rails 3.2. The name returned
             # is not marked as HTML safe so will be escaped automatically in views. We
@@ -300,7 +300,11 @@ class User < ActiveRecord::Base
       !ban_text.empty?
     end
 
-    alias_method :public_banned?, :banned?
+    def public_banned?
+      warn %q([DEPRECATION] User#public_banned? will be replaced with
+              User#banned? as of 0.22).squish
+      banned?
+    end
 
     # Various ways the user can be banned, and text to describe it if failed
     def can_file_requests?

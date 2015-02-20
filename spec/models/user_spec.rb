@@ -386,13 +386,4 @@ describe User do
 
   end
 
-  describe :public_banned? do
-
-    it 'is an alias of banned?' do
-      user = User.new
-      expect(user.method(:public_banned?)).to eq(user.method(:banned?))
-    end
-
-  end
-
 end
