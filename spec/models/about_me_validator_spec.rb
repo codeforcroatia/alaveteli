@@ -4,10 +4,10 @@ describe AboutMeValidator do
 
   describe :new do
 
-    it 'expects the subject to respond to about_me' do
-      expect {
-        AboutMeValidator.new(double)
-      }.to raise_error 'subject must respond to :about_me'
+    it 'sets each supported attribute on the instance' do
+      params = { :about_me => 'My description' }
+      validator = AboutMeValidator.new(params)
+      expect(validator.about_me).to eq('My description')
     end
 
   end
@@ -15,26 +15,26 @@ describe AboutMeValidator do
   describe :valid? do
 
     it 'is valid if about_me is =< 500' do
-      user = double(:about_me => 'a'*500)
-      validator = AboutMeValidator.new(user)
+      params = { :about_me => 'a'*500 }
+      validator = AboutMeValidator.new(params)
       expect(validator).to be_valid
     end
 
     it 'is valid if about_me is blank' do
-      user = double(:about_me => '')
-      validator = AboutMeValidator.new(user)
+      params = { :about_me => '' }
+      validator = AboutMeValidator.new(params)
       expect(validator).to be_valid
     end
 
     it 'is valid if about_me is nil' do
-      user = double(:about_me => nil)
-      validator = AboutMeValidator.new(user)
+      params = { :about_me => nil }
+      validator = AboutMeValidator.new(params)
       expect(validator).to be_valid
     end
 
     it 'is invalid if about_me is > 500' do
-      user = double(:about_me => 'a'*501)
-      validator = AboutMeValidator.new(user)
+      params = { :about_me => 'a'*501 }
+      validator = AboutMeValidator.new(params)
       expect(validator).to have(1).error_on(:about_me)
     end
 
@@ -42,9 +42,9 @@ describe AboutMeValidator do
 
   describe :about_me do
 
-    it 'forwards to the subject' do
-      user = double(:about_me => 'My description')
-      validator = AboutMeValidator.new(user)
+    it 'has an attribute accessor' do
+      params = { :about_me => 'My description' }
+      validator = AboutMeValidator.new(params)
       expect(validator.about_me).to eq('My description')
     end
 
