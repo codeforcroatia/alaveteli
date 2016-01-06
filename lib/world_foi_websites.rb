@@ -5,7 +5,7 @@ class WorldFOIWebsites
                               {:name => "Pitai gi",
                                   :country_name => "Bulgaria",
                                   :country_iso_code => "BG",
-                                  :url => "http://www.pitaigi.bg"},
+                                  :url => "http://pitaigi.obshtestvo.bg"},
                               {:name => "WhatDoTheyKnow",
                                   :country_name => "United Kingdom",
                                   :country_iso_code => "GB",
